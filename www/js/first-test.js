@@ -1,3 +1,4 @@
+//test
 var MyObj = function() { 
 	this.files = new Object();
 	return this;
