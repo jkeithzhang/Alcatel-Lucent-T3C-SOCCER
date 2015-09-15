@@ -14,7 +14,7 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="vendor/jquery-mobile/jquery.mobile-1.4.5.min.css">
 
@@ -24,7 +24,9 @@
         <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">  -->
         <script type="text/javascript" src="vendor/js/jquery.js"></script>
         <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <!-- // <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
         <title>T3C Soccer</title>
     </head>
     
@@ -42,7 +44,7 @@
             </div>
             <div data-role="header" class="ui-grid-b" id="mainheader">
                 <div class="ui-block-a ui-nodisc-icon ui-alt-icon">
-                    <a href="#panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext" style=""></a>
+                    <a href="#panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext" style=""></a>
                 </div>
                 <div class="ui-block-b" style="text-align:center;color:white">
                     <p>T3C Soccer</p>
@@ -51,8 +53,27 @@
                     <!-- <p>T3C Soccer</p> -->
                 </div>
             </div>
-            <div data-role="content">
-                <!-- <a href="#panel" data-role="button" data-icon="bars">Show Panel</a> -->
+            <div data-role="content">        
+                <div class="ui-grid-solo" style="padding:5px;">
+                    <div class="ui-bar ui-bar-a">
+                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                    </div>
+                </div>
+                <div class="ui-grid-solo" style="padding:5px;">
+                    <div class="ui-bar ui-bar-a">
+                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                    </div>
+                </div>
+                <div class="ui-grid-solo" style="padding:5px;">
+                    <div class="ui-bar ui-bar-a">
+                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                    </div>
+                </div>
+                <div class="ui-grid-solo" style="padding:5px;">
+                    <div class="ui-bar ui-bar-a">
+                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                    </div>
+                </div>
             </div>
             <!-- footer -->
         </div>
