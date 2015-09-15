@@ -1,6 +1,6 @@
-# Alcatel-Lucent-T3C-SOCCER ![](www/img/Alcatel-Lucent-T3C-SOCCER.png)
+# Alcatel-Lucent-T3C-SOCCER 
 
-Application to manage soccer group in Alcatel-Lucent 3LS.
+Application to manage soccer group in Alcatel-Lucent 3LS. ![](www/T3C-SOCCER.png)
 
 ## APIs
 * Cordova (https://github.com/apache/cordova-plugin-camera)
