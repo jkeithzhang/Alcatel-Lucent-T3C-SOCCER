@@ -10,17 +10,17 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css"> -->
-
-        <link rel="stylesheet" type="text/css" href="css/black-sidebar.css">        
-        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="vendor/jquery-mobile/jquery.mobile-1.4.5.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">  -->
+        <script type="text/javascript" src="vendor/js/jquery.js"></script>
+        <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <!-- // <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
         <title>T3C Soccer</title>
     </head>
     
@@ -36,11 +36,19 @@
                     <li><a href="#">Fourth Item</a></li>
                 </ul>
             </div>
-            <div data-role="header">
-              <h1>Alcatel-Lucent T3C Soccer</h1>
+            <div data-role="header" class="ui-grid-b">
+                <div class="ui-block-a ui-nodisc-icon ui-alt-icon">
+                    <a href="#panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext" style=""></a>
+                </div>
+                <div class="ui-block-b" style="text-align:center">
+                    <p>T3C Soccer</p>
+                </div>
+                <div class="ui-block-c">
+                    <!-- <p>T3C Soccer</p> -->
+                </div>
             </div>
             <div data-role="content">
-              <a href="#panel" data-role="button" data-icon="bars">Show Panel</a>
+                <!-- <a href="#panel" data-role="button" data-icon="bars">Show Panel</a> -->
             </div>
             <!-- footer -->
         </div>
