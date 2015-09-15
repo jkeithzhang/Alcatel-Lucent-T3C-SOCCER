@@ -1,4 +1,4 @@
-# Alcatel-Lucent-T3C-SOCCER
+# Alcatel-Lucent-T3C-SOCCER (www/img/Alcatel-Lucent-T3C-SOCCER.png)
 
 Application to manage soccer group in Alcatel-Lucent 3LS.
 
