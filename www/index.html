@@ -10,21 +10,21 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="vendor/jquery-mobile/jquery.mobile-1.4.5.min.css">
-
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src https://cdn.example.net; child-src 'none'; object-src 'none'">  -->
 
 
         <link rel="stylesheet" type="text/css" href="css/main-page.css">
         <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">  -->
         <script type="text/javascript" src="vendor/js/jquery.js"></script>
         <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <!-- // <script type="text/javascript" src="cordova.js"></script> -->
+        <!--  <script type="text/javascript" src="cordova.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>
 
         <title>T3C Soccer</title>
@@ -50,33 +50,24 @@
                     <p>T3C Soccer</p>
                 </div>
                 <div class="ui-block-c">
-                    <!-- <p>T3C Soccer</p> -->
                 </div>
             </div>
             <div data-role="content">        
                 <div class="ui-grid-solo" style="padding:5px;">
-                    <div class="ui-bar ui-bar-a">
-                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
-                    </div>
-                </div>
-                <div class="ui-grid-solo" style="padding:5px;">
-                    <div id="deviceready" class="blink">
+                    <div id="deviceready" class="blink" style="text-align:center;">
                         <p class="event listening">Connecting to Device</p>
                         <p class="event received">Device is Ready</p>
                     </div>
                 </div>
-                <div class="ui-grid-solo" style="padding:5px;">
-                    <div class="ui-bar ui-bar-a">
-                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                <div class="ui-grid-a logo-wrapper">
+                    <div class="ui-block-a logo">
+                        <img src="T3C-SOCCER.jpg" width="100" height="100"/>   
                     </div>
-                </div>
-                <div class="ui-grid-solo" style="padding:5px;">
-                    <div class="ui-bar ui-bar-a">
-                        Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. Within the grid container, child elements are assigned ui-block-a/b/c/d/e in a sequential manner which makes each "block" element float side-by-side, forming the grid.                        
+                    <div class="ui-block-b logo-text">
+                        Instead of sending Emails here and there, here is the shortcut for T3C Soccer Group!
                     </div>
                 </div>
             </div>
-            <!-- footer -->
         </div>
     </body>
 </html>

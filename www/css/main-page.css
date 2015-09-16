@@ -20,6 +20,20 @@ li[data-role="list-divider"] {
 	text-shadow: none !important;
 }
 
-.test:hover{
+.test:hover {
 	background-color: #444 !important;
+}
+.logo-wrapper {
+	padding:5px;
+	background-color:white;
+	border:none;
+	/*height: 80px;*/
+}
+.logo {
+	text-align:right;
+	padding:5%;
+}
+.logo-text {
+	padding: 5px;
+	padding:5%;
 }
