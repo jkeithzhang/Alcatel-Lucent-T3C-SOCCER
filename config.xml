@@ -8,10 +8,16 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <preference name="StatusBarOverlaysWebView" value="false" /> 
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
     <icon src="T3C-SOCCER.jpg"/>
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
+    <allow-intent href="http://*/*" /><name />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
