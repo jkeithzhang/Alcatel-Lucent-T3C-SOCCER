@@ -1,0 +1,121 @@
+/* G - Black Sidebar Theme for jQuery Mobile
+ * Available on: https://gist.github.com/4558649
+-----------------------------------------------------------------------------------------------------------*/
+.ui-bar-g {
+    border: 1px solid       #666 /*{a-bar-border}*/;
+    background:             #444 /*{a-bar-background-color}*/;
+    color:                  #ccc /*{a-bar-color}*/;
+    font-weight: bold;
+    text-shadow: 0 /*{a-bar-shadow-x}*/ -1px /*{a-bar-shadow-y}*/ 1px /*{a-bar-shadow-radius}*/ #000 /*{a-bar-shadow-color}*/;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #555 /*{a-bar-background-start}*/), to( #444 /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient( #555 /*{a-bar-background-start}*/, #444 /*{a-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient( #555 /*{a-bar-background-start}*/, #444 /*{a-bar-background-end}*/); /* FF3.6 */
+    background-image:     -ms-linear-gradient( #555 /*{a-bar-background-start}*/, #444 /*{a-bar-background-end}*/); /* IE10 */
+    background-image:      -o-linear-gradient( #555 /*{a-bar-background-start}*/, #444 /*{a-bar-background-end}*/); /* Opera 11.10+ */
+    background-image:         linear-gradient( #555 /*{a-bar-background-start}*/, #444 /*{a-bar-background-end}*/);
+}
+.ui-bar-g,
+.ui-bar-g input,
+.ui-bar-g select,
+.ui-bar-g textarea,
+.ui-bar-g button {
+    font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+}
+.ui-bar-g .ui-link-inherit {
+    color: #fff /*{a-bar-color}*/;
+}
+.ui-bar-g a.ui-link {
+    color: #7cc4e7 /*{a-bar-link-color}*/;
+    font-weight: bold;
+}
+.ui-bar-g a.ui-link:visited {
+    color: #2489ce /*{a-bar-link-visited}*/;
+}
+.ui-bar-g a.ui-link:hover {
+    color: #2489ce /*{a-bar-link-hover}*/;
+}
+.ui-bar-g a.ui-link:active {
+    color: #2489ce /*{a-bar-link-active}*/;
+}
+.ui-body-g,
+.ui-overlay-g {
+    border: 1px solid       #444 /*{a-body-border}*/;
+    background:             #333 /*{a-body-background-color}*/;
+    color:                  #fff /*{a-body-color}*/;
+    text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 1px /*{a-body-shadow-radius}*/ #111 /*{a-body-shadow-color}*/;
+    font-weight: normal;
+}
+.ui-overlay-g {
+    background-image: none;
+    border-width: 0;
+}
+.ui-body-g,
+.ui-body-g input,
+.ui-body-g select,
+.ui-body-g textarea,
+.ui-body-g button {
+    font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+}
+.ui-body-g .ui-link-inherit {
+    color:  #fff /*{a-body-color}*/;
+}
+.ui-body-g .ui-link {
+    color: #2489ce /*{a-body-link-color}*/;
+    font-weight: bold;
+}
+.ui-body-g .ui-link:visited {
+    color: #2489ce /*{a-body-link-visited}*/;
+}
+.ui-body-g .ui-link:hover {
+    color: #2489ce /*{a-body-link-hover}*/;
+}
+.ui-body-g .ui-link:active {
+    color: #2489ce /*{a-body-link-active}*/;
+}
+.ui-btn-up-g {
+    border: 1px solid       #111 /*{a-bup-border}*/;
+    background:             #333 /*{a-bup-background-color}*/;
+    font-weight: bold;
+    color:                  #eee /*{a-bup-color}*/;
+    text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 1px /*{a-bup-shadow-radius}*/ #111 /*{a-bup-shadow-color}*/;
+}
+.ui-btn-up-g:visited,
+.ui-btn-up-g a.ui-link-inherit {
+    color:                  #eee /*{a-bup-color}*/;
+}
+.ui-btn-hover-g {
+    border: 1px solid       #000 /*{a-bhover-border}*/;
+    background:             #2e2e2e /*{a-bhover-background-color}*/;
+    font-weight: bold;
+    color:                  #eee /*{a-bhover-color}*/;
+    text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #111 /*{a-bhover-shadow-color}*/;
+}
+.ui-btn-hover-g:visited,
+.ui-btn-hover-g:hover,
+.ui-btn-hover-g a.ui-link-inherit {
+    color:                  #eee /*{a-bhover-color}*/;
+}
+.ui-btn-down-g {
+    border: 1px solid       #000 /*{a-bdown-border}*/;
+    background:             #222 /*{a-bdown-background-color}*/;
+    font-weight: bold;
+    color:                  #eee /*{a-bdown-color}*/;
+    text-shadow: 0 /*{a-bdown-shadow-x}*/ 1px /*{a-bdown-shadow-y}*/ 1px /*{a-bdown-shadow-radius}*/ #111 /*{a-bdown-shadow-color}*/;
+}
+.ui-btn-down-g:visited,
+.ui-btn-down-g:hover,
+.ui-btn-down-g a.ui-link-inherit {
+    color:                  #eee /*{a-bdown-color}*/;
+}
+.ui-btn-up-g,
+.ui-btn-hover-g,
+.ui-btn-down-g {
+    font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+    text-decoration: none;
+}
+.ui-btn-up-g .ui-btn-inner,
+.ui-btn-hover-g .ui-btn-inner,
+.ui-btn-down-g .ui-btn-inner {
+    border-top: 1px solid   #fff;
+    border-color:           rgba(255,255,255,.15);
+}
