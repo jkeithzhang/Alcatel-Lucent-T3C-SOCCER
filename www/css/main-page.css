@@ -1,0 +1,40 @@
+#mainheader {
+	background-color: #444;
+	border-color: #444;
+}
+li[data-role="list-divider"] {
+	border: 1px solid #222;
+	box-shadow: inset 0 8px 5px -5px #444;
+	background-color: #555;
+	color: #888;
+	text-shadow: none;
+}
+#panel {
+	background-color: #333;
+}
+
+.test {
+	background-color: #333 !important;
+	border-color: #222 !important;
+	color: white !important;
+	box-shadow: inset 0 8px 5px -5px #444;
+	text-shadow: none !important;
+}
+
+.test:hover {
+	background-color: #444 !important;
+}
+.logo-wrapper {
+	padding:5px;
+	background-color:white;
+	border:none;
+	/*height: 80px;*/
+}
+.logo {
+	text-align:right;
+	padding:5%;
+}
+.logo-text {
+	padding: 5px;
+	padding:5%;
+}
