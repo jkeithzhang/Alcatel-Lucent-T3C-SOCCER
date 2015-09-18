@@ -30,7 +30,6 @@
     <content src="index.html" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
     <icon src="T3C-SOCCER.jpg" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
