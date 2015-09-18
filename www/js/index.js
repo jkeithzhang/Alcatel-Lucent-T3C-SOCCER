@@ -36,7 +36,8 @@ var app = {
         app.receivedEvent('deviceready');
         console.log(StatusBar);
         StatusBar.overlaysWebView(false);
-        StatusBar.styleDefault();
+        StatusBar.backgroundColorByHexString("#444");
+        StatusBar.styleLightContent();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

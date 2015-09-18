@@ -3,11 +3,11 @@
 Application to manage soccer group in Alcatel-Lucent 3LS. 
 
 ## APIs
-* Cordova (https://github.com/apache/cordova-plugin-camera)
+* Cordova v5.3.1 ( https://github.com/apache/cordova-plugin-camera )
 
 ## Libraries
-* Jquery Mobile (https://github.com/jquery/jquery-mobile)
-* Cordova statusbar (https://github.com/apache/cordova-plugin-statusbar/)
+* Jquery Mobile v1.4.5 ( https://github.com/jquery/jquery-mobile )
+* Cordova statusbar ( https://github.com/apache/cordova-plugin-statusbar/ )
 
 ## Contributors
 - Ke Zhang [ke.zhang@alcatel-lucent.com]

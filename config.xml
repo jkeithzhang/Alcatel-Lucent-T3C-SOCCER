@@ -10,7 +10,7 @@
     <content src="index.html" />
     <preference name="StatusBarOverlaysWebView" value="false" /> 
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <!-- <preference name="StatusBarBackgroundColor" value="#000000" /> -->
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
