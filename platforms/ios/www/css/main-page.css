@@ -38,3 +38,8 @@ li[data-role="list-divider"] {
 	padding: 5px;
 	padding:5%;
 }
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
