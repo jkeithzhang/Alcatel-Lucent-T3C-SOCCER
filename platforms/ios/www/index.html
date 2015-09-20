@@ -31,17 +31,17 @@
     </head>
     
     <body>
-        <div data-role="page">
-<!--             <div data-role="panel" data-theme="g" id="panel">
+        <div data-role="page" id="page1" data-url="page1">
+            <div data-role="panel" data-theme="g" id="panel">
                 <ul data-role="listview" data-theme="g" data-divider-theme="g">
                         <li data-role="list-divider">Menu</li>
-                        <li><a class="test" href="#">Next Game</a></li>
-                        <li><a class="test" href="#">Availability</a></li>          
+                        <li><a class="test" href="#page1" data-transition="slidefade">Next Game</a></li>
+                        <li><a class="test" href="#page2" data-transition="slidefade">Availability</a></li>          
                         <li data-role="list-divider">More Info</li>
                         <li><a class="test" href="#">Calendar</a></li>
                         <li><a class="test" href="#">Notification</a></li>
                 </ul>
-            </div> -->
+            </div>
             <div data-role="header" class="ui-grid-b" data-position="fixed" id="mainheader">
                 <div class="ui-block-a ui-nodisc-icon ui-alt-icon">
                     <a href="#panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext" style=""></a>
@@ -81,6 +81,52 @@
                             <p>David</p>
                             <p>Robert</p>
                             <p>James</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page2" data-url="page2">
+            <div data-role="panel" data-theme="g" id="panel">
+                <ul data-role="listview" data-theme="g" data-divider-theme="g">
+                        <li data-role="list-divider">Menu</li>
+                        <li><a class="test" href="#page1" data-transition="slidefade">Next Game</a></li>
+                        <li><a class="test" href="#page2" data-transition="slidefade">Availability</a></li>          
+                        <li data-role="list-divider">More Info</li>
+                        <li><a class="test" href="#">Calendar</a></li>
+                        <li><a class="test" href="#">Notification</a></li>
+                </ul>
+            </div>
+            <div data-role="header" class="ui-grid-b" data-position="fixed" id="mainheader">
+                <div class="ui-block-a ui-nodisc-icon ui-alt-icon">
+                    <a href="#panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext" style=""></a>
+                </div>
+                <div class="ui-block-b" style="text-align:center;color:white">
+                    <p>T3C Soccer</p>
+                </div>
+                <div class="ui-block-c">
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-solo" style="padding:5px;">
+                    <div class="blink" style="text-align:center;">    
+                        <img src="T3C-SOCCER.jpg" width="100" height="100"/>
+                        <div>Instead of sending Emails here and there, here is the better option!!!!!!!!</div>
+                    </div>
+                </div>
+                <div class="ui-grid-solo main-window">
+                    <div data-role="tabs" id="tabs">
+                        <div data-role="navbar">
+                            <ul>
+                                <li><a href="#one" class="nav-bar ui-btn-active" data-ajax="false">Field</a></li>
+                                <li><a href="#two" class="nav-bar" data-ajax="false">Team VS</a></li>
+                            </ul>
+                        </div>
+                        <div id="one" class="ui-body-c ui-content">
+                            <img class="displayed" src="img/OZdome.png" width="200" height="200"/>
+                        </div>
+                        <div id="two" class="ui-body-c ui-content">
+                            <p>Alex</p>
                         </div>
                     </div>
                 </div>
