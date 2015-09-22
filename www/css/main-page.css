@@ -9,7 +9,7 @@ li[data-role="list-divider"] {
 	color: #888;
 	text-shadow: none;
 }
-#panel {
+#panel-first, #panel-second {
 	background-color: #333;
 }
 
