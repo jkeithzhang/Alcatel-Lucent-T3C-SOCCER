@@ -47,3 +47,6 @@ li[data-role="list-divider"] {
 	background-color:#ddd;
 	margin-top: 10%;
 }
+.ui-table-columntoggle-btn {
+    display: none !important;
+}
