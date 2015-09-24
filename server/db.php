@@ -3,7 +3,7 @@
 $myArray = include '../config.php';
 
 
-$conn = new mysqli('p:localhost', 'root', 'tigris', 't3c-soccer');
+$conn = new mysqli('p:'.$myArray['host'], $myArray['username'], $myArray['password'], $myArray['database']);
 
 // Check connection
 if ($conn->connect_error) {
