@@ -3,7 +3,7 @@
 // 
 var server = {
 	port: '8888',
-	host: '192.168.1.117', //IP for your local
+	host: 'localhost', //IP for your local
 	user: 'root',
 	password: 'tigris',
 	database: 'tshelp',
