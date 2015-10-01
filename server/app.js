@@ -1,9 +1,17 @@
 var express = require('express');
 var app = express();
+var http = require('http');
+var body = require('body-parser');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+app.use(body.json());
+
+
+//Task Manager (talk to db)
+// var NM = require('./app/server/modules/node-manager');
+
+//Routes
+require('./routes/index.js')(app);
+
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
