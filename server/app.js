@@ -7,7 +7,7 @@ app.use(body.json());
 
 
 //Task Manager (talk to db)
-// var NM = require('./app/server/modules/node-manager');
+var PM = require('./modules/parse-manager');
 
 //Routes
 require('./routes/index.js')(app);
