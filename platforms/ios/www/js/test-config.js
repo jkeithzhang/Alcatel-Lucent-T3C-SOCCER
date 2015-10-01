@@ -11,12 +11,25 @@ $(document).ready(function() {
             var trHTML = '';
             $.each(response, function (i, item) {
                 trHTML += '<tr><td style="text-align:center;vertical-align: middle">' + 
-                item.date + '</td><td style="text-align:center;vertical-align: middle">' + 
-                item.weekday + '</td><td><div data-role="fieldcontain" style="margin-left: 30px"><fieldset data-role="controlgroup"><label><input type="checkbox" name="checkbox-0"/>In</label></fieldset></div></td></tr>';
+                item.date + '</td><td><div data-role="fieldcontain" style="margin-left: 30px"><fieldset data-role="controlgroup"><label><input type="checkbox" name="checkbox-0"/>Join</label></fieldset></div></td></tr>';
             });
-            console.log(trHTML);
+            // console.log(trHTML);
             $(trHTML).appendTo('#records_table').trigger('create');
             // $('#records_table').append(trHTML);
         }
-    });    
+    });  
 })
+
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+//
+function onDeviceReady() {
+    document.addEventListener("resume", onResume, false);
+}
+// Handle the resume event
+//
+function onResume() {
+    console.log('hahahahahahha');
+}
