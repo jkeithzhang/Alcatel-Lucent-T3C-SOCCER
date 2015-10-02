@@ -3,6 +3,7 @@ var app = express();
 var http = require('http');
 var body = require('body-parser');
 
+app.set('view engine', 'html');
 app.use(body.json());
 
 

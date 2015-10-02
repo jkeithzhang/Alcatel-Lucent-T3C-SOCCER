@@ -13,6 +13,6 @@ module.exports = function(app, PM) {
 /*
  * All others
  */
- 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
+ 	// app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 
 }
