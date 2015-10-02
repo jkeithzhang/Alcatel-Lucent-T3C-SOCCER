@@ -17,23 +17,17 @@ module.exports = function() {
 				return undefined;
 		}
 	}
-	this.removeTest = function(rel, tid, res) {
-		var queryKey = 'releases.'+rel+'.tests';
-		var query = {};
-			query[queryKey] = {'$elemMatch': {'tid': parseInt(tid)} };
-		var pullQuery = {};
-			pullQuery['$pull'] = {};
-			pullQuery['$pull'][queryKey] = {'tid': parseInt(tid)};
 
-		sigTestDB.update( 
-			query, 
-			pullQuery,
-			function(err, result) {
-				if (err) console.log(err);
-				else {
-					res.json('done');
-				}
-			}
-		);
+	function getSchedule(callback) {
+		db2.query('SELECT * FROM schedule', function(err, rows, fields) {
+			if (err) throw err;
+			return callback(rows);
+		});		
+	}
+
+	this.parseSchedule = function(res) {
+		getSchedule(function(e) {
+			res.jsonp(e);
+		});
 	}
 }

@@ -10,7 +10,7 @@ app.use(body.json());
 var PM = require('./modules/parse-manager');
 
 //Routes
-require('./routes/index.js')(app);
+require('./routes/index.js')(app, PM);
 
 
 var server = app.listen(3000, function () {

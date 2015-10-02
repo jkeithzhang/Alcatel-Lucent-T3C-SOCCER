@@ -3,7 +3,7 @@ var mysql_dev = {
 	host: 		'localhost',
 	user: 		'root',
 	password: 	'tigris',
-	database: 	'tshelp',
+	database: 	't3c-soccer',
 	insecureAuth: true
 };
 
