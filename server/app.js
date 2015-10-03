@@ -16,6 +16,13 @@ require('./routes/index.js')(app, PM);
 
 var io = require('socket.io').listen(server);
 
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
 server.listen(2000, function () {
   var host = server.address().address;
   var port = server.address().port;
