@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: 'http://localhost:3000/',
+        url: 'http://192.168.1.124:2000/',
         type: 'GET',
         dataType: 'jsonp',
         contentType: 'application/json',

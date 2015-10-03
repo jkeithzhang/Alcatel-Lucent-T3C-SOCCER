@@ -2,7 +2,7 @@
 // Right now env is only for localhost (DEV only)
 // 
 var server = {
-	port: '3000',
+	port: '2000',
 	host: 'localhost', //IP for your local
 	// user: 'root',
 	// password: 'tigris',

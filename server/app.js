@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http');
+var server = http.Server(app);
 var body = require('body-parser');
 
 app.set('view engine', 'html');
@@ -13,8 +14,9 @@ var PM = require('./modules/parse-manager');
 //Routes
 require('./routes/index.js')(app, PM);
 
+var io = require('socket.io').listen(server);
 
-var server = app.listen(3000, function () {
+server.listen(2000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
