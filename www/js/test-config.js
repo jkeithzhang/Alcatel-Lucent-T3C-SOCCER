@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: server.host_port+'/',
+        url: server.host_port+'/',//config
         type: 'GET',
         dataType: 'jsonp',
         contentType: 'application/json',
