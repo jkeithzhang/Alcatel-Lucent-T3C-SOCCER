@@ -21,22 +21,20 @@ $(function() {
 
     $('body').on('click', '.join', function() {    
         if($(this).next().is(':checked') == false) {   //join
-            // alert('im joining');
-            socket.emit('chat message', 'haha');
-        } else { //un join
-            // alert('no, im not going');
+            socket.emit('chat message', 'James joining');
+        } else { //unjoin
+            // socket.emit('chat message', 'James unjoin');        
         }        
     });
+
     socket.on('chat message', function(msg){
-      alert(msg);
+        var insertHTML = '';
+        insertHTML += '<div id="white-team" class="ui-bar ui-bar-a" style="text-align:center;">James</div>';
+        $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     }); 
+
 });
 
-
-function send() {
-    socket.broadcast.emit('chat message', 'James');
-    console.log('message: '); 
-}
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
