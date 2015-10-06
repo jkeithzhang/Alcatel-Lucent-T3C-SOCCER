@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     $.ajax({
         url: server.host_port+'/',//config
         type: 'GET',
@@ -11,14 +11,32 @@ $(document).ready(function() {
             var trHTML = '';
             $.each(response, function (i, item) {
                 trHTML += '<tr><td style="text-align:center;vertical-align: middle">' + 
-                item.date + '</td><td><div data-role="fieldcontain" style="margin-left: 30px"><fieldset data-role="controlgroup"><label><input type="checkbox" name="checkbox-0"/>Join</label></fieldset></div></td></tr>';
+                item.date + '</td><td><div data-role="fieldcontain" style="margin-left: 30px"><fieldset data-role="controlgroup"><label class="join"><input type="checkbox" class="custom"/>Join</label></fieldset></div></td></tr>';
             });
             // console.log(trHTML);
             $(trHTML).appendTo('#records_table').trigger('create');
             // $('#records_table').append(trHTML);
         }
-    });  
-})
+    });
+
+    $('body').on('click', '.join', function() {    
+        if($(this).next().is(':checked') == false) {   //join
+            // alert('im joining');
+            socket.emit('chat message', 'haha');
+        } else { //un join
+            // alert('no, im not going');
+        }        
+    });
+    socket.on('chat message', function(msg){
+      alert(msg);
+    }); 
+});
+
+
+function send() {
+    socket.broadcast.emit('chat message', 'James');
+    console.log('message: '); 
+}
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);

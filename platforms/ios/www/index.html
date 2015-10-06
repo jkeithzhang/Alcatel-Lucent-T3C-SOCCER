@@ -24,18 +24,14 @@
         <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">  -->
         <script type="text/javascript" src="vendor/js/jquery.js"></script>
         <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>    
+        <script src="http://localhost:2000/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/config.js"></script>
-        <script type="text/javascript" src="js/test-config.js"></script>      
-        <script src="http://10.0.1.2:2000/socket.io/socket.io.js"></script>
         <script>
             var socket = io.connect(server.host_port);
-            socket.emit('chat message', 'haha');
-            socket.on('chat message', function(msg){
-              alert(msg);
-            });            
         </script>
+        <script type="text/javascript" src="js/test-config.js"></script>  
         <title>T3C Soccer</title>
     </head>
     
@@ -78,12 +74,14 @@
                     <div data-role="tabs" id="tabs">
                         <div data-role="navbar">
                             <ul>
-                                <li><a href="#one" class="nav-bar ui-btn-active" data-ajax="false">Field</a></li>
-                                <li><a href="#two" class="nav-bar" data-ajax="false">Team VS</a></li>
+                                <li><a href="#one" class="nav-bar ui-btn-active" data-ajax="false">Lineup</a></li>
+                                <li><a href="#two" class="nav-bar" data-ajax="false">Your Availability</a></li>
                             </ul>
                         </div>
-                        <div id="one" class="ui-body-c ui-content">
-                            <img class="displayed" src="img/OZdome.png" width="200" height="200"/>
+                        <div id="one" class="ui-grid-b ui-content">
+                            <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="text-align:center;">Ke</div></div>
+                            <div class="ui-block-b"><div class="ui-bar ui-bar-a"><img class="displayed" src="img/OZdome.png" style="max-width:100%;max-height:100%;"/></div></div>
+                            <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="text-align:center;">Lim</div></div>
                         </div>
                         <div id="two" class="ui-body-c ui-content">
                             <table data-role="table" id="records_table" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive">
