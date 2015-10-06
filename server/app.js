@@ -10,24 +10,31 @@ app.use(body.json());
 
 //Task Manager (talk to db)
 var PM = require('./modules/parse-manager');
+//SocketIO
+var io = require('socket.io').listen(server);
+
 
 //Routes
 require('./routes/index.js')(app, PM);
 
-var io = require('socket.io').listen(server);
+
 
 io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
+  // console.log('a user connected');
+  // socket.on('disconnect', function(){
+  //   console.log('user disconnected');
+  // });
 
   socket.on('chat message', function(msg){
+    // io.emit('chat message', msg);
+    socket.broadcast.emit('chat message', msg);
     console.log('message: ' + msg);
   });
 
   //broadcasting..
 });
+
+
 
 server.listen(2000, function () {
   var host = server.address().address;

@@ -32,6 +32,9 @@
         <script>
             var socket = io.connect(server.host_port);
             socket.emit('chat message', 'haha');
+            socket.on('chat message', function(msg){
+              alert(msg);
+            });            
         </script>
         <title>T3C Soccer</title>
     </head>
