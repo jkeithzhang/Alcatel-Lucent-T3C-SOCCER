@@ -8,6 +8,7 @@ Application to manage soccer group in Alcatel-Lucent T3C.
 ## Libraries
 * Jquery Mobile v1.4.5 ( https://github.com/jquery/jquery-mobile )
 * Cordova statusbar ( https://github.com/apache/cordova-plugin-statusbar/ )
+* Font Awesome v4.4.0 ( https://fortawesome.github.io/Font-Awesome/ )
 
 ## Contributors
 - Ke Zhang [ke.zhang@alcatel-lucent.com]

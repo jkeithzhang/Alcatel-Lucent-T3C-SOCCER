@@ -50,6 +50,9 @@ li[data-role="list-divider"] {
 .ui-table-columntoggle-btn {
     display: none !important;
 }
+.fa-cog {
+  color: black;
+}
 /*body{
 	cursor: pointer;
 }*/
