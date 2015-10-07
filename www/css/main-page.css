@@ -50,3 +50,6 @@ li[data-role="list-divider"] {
 .ui-table-columntoggle-btn {
     display: none !important;
 }
+/*body{
+	cursor: pointer;
+}*/

@@ -11,7 +11,7 @@ $(function() {
             var trHTML = '';
             $.each(response, function (i, item) {
                 trHTML += '<tr><td style="text-align:center;vertical-align: middle">' + 
-                item.date + '</td><td><div data-role="fieldcontain" style="margin-left: 30px"><fieldset data-role="controlgroup"><label class="join"><input type="checkbox" class="custom"/>Join</label></fieldset></div></td></tr>';
+                item.date + '</td><td style="text-align:center;vertical-align: middle"><a class="in-button">I\'m in</a></td></tr>';
             });
             // console.log(trHTML);
             $(trHTML).appendTo('#records_table').trigger('create');
@@ -27,6 +27,7 @@ $(function() {
         }        
     });
 
+    // socket.emit('chat message', 'James joining');
     socket.on('chat message', function(msg){
         var insertHTML = '';
         insertHTML += '<div id="white-team" class="ui-bar ui-bar-a" style="text-align:center;">James</div>';
@@ -35,6 +36,14 @@ $(function() {
 
 });
 
+// $(document).on( "pageinit", "#page1", function( event ) {
+//     alert( "This page was just enhanced by jQuery Mobile!" );
+// });
+
+$(document).on( "vclick", ".in-button", function() {
+  $(this).html("joined");
+  socket.emit('chat message', 'James joining');
+});
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
