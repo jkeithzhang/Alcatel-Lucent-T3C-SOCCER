@@ -24,16 +24,17 @@ $(function() {
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     }); 
 
+    $('div').on( "vclick", ".in-button", function() {
+      $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
+      socket.emit('chat message', 'James joining');
+    });
 });
 
 // $(document).on( "pageinit", "#page1", function( event ) {
 //     alert( "This page was just enhanced by jQuery Mobile!" );
 // });
 
-$(document).on( "vclick", ".in-button", function() {
-  $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
-  socket.emit('chat message', 'James joining');
-});
+
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
