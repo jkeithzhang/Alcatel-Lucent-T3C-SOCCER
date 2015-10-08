@@ -20,7 +20,7 @@ $(function() {
 
     socket.on('chat message', function(msg){
         var insertHTML = '';
-        insertHTML += '<div class="ui-bar ui-bar-a" style="text-align:center;border-style:none;">James</div>';
+        insertHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">James</div>';
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     }); 
 
