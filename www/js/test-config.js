@@ -10,8 +10,8 @@ $(function() {
         success: function(response) {
             var trHTML = '';
             $.each(response, function (i, item) {
-                trHTML += '<tr><td style="text-align:center;vertical-align: middle">' + 
-                item.date + '</td><td style="text-align:center;vertical-align: middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
+                trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
+                item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
             });
             $(trHTML).appendTo('#records_table').trigger('create');
             // $('#records_table').append(trHTML);
@@ -20,7 +20,7 @@ $(function() {
 
     socket.on('chat message', function(msg){
         var insertHTML = '';
-        insertHTML += '<div id="white-team" class="ui-bar ui-bar-a" style="text-align:center;">James</div>';
+        insertHTML += '<div class="ui-bar ui-bar-a" style="text-align:center;border-style:none;">James</div>';
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     }); 
 
