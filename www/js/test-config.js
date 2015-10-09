@@ -22,16 +22,21 @@ $(function() {
         var insertHTML = '';
         insertHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">James</div>';
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
-    }); 
-
-    $('div').on( "vclick", ".in-button", function() {
-      $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
-      socket.emit('chat message', 'James joining');
     });
+
+    $(document).off('click', '.in-button').on('click', '.in-button',function(e) {
+        $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
+        socket.emit('chat message', 'James joining');
+    });
+
 });
 
 // $(document).on( "pageinit", "#page1", function( event ) {
-//     alert( "This page was just enhanced by jQuery Mobile!" );
+//     // alert( "This page was just enhanced by jQuery Mobile!" );
+//     $('div').on( "vclick", ".in-button", function() {
+//       $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
+//       socket.emit('chat message', 'James joining');
+//     });
 // });
 
 
