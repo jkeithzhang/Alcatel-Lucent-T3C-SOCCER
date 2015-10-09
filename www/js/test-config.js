@@ -1,4 +1,5 @@
-$(function() {
+$(document).on("pageinit", "#page1", function(event){
+    event.preventDefault();
     $.ajax({
         url: server.host_port+'/',//config
         type: 'GET',
@@ -26,16 +27,15 @@ $(function() {
 
     $('#page1').on('vclick', '.in-button', function(e) {
         e.preventDefault(); //Why is this neccessary?
-        $(this).html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');
+        $(this).parent().html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');
         socket.emit('chat message', 'James joining');             
     });
 
-    // $('#page1').on('vclick', '.cancel-button', function(e) {
-    //     alert('hah');
-    //     e.preventDefault();
-    //     $(this).html('<div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div>');
-    //     socket.emit('chat message', 'James joining');             
-    // });
+    $('#page1').on('vclick', '.cancel-button', function(e) {
+        e.preventDefault(); //Why is this not neccessary then?
+        $(this).parent().html('<div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div>');
+        socket.emit('chat message', 'James joining');             
+    });
 });
 
 // $(document).on( "pageinit", "#page1", function( event ) {
@@ -47,7 +47,6 @@ $(function() {
 // });
 // $(document).bind('pageinit', function(){
 //     // Code goes here
-
 // });    
 
 
