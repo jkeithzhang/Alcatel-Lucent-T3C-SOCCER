@@ -24,11 +24,18 @@ $(function() {
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     });
 
-    $(document).off('click', '.in-button').on('click', '.in-button',function(e) {
-        $(this).html('<i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a>');
-        socket.emit('chat message', 'James joining');
+    $('#page1').on('vclick', '.in-button', function(e) {
+        e.preventDefault(); //Why is this neccessary?
+        $(this).html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');
+        socket.emit('chat message', 'James joining');             
     });
 
+    // $('#page1').on('vclick', '.cancel-button', function(e) {
+    //     alert('hah');
+    //     e.preventDefault();
+    //     $(this).html('<div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div>');
+    //     socket.emit('chat message', 'James joining');             
+    // });
 });
 
 // $(document).on( "pageinit", "#page1", function( event ) {
@@ -38,7 +45,10 @@ $(function() {
 //       socket.emit('chat message', 'James joining');
 //     });
 // });
+// $(document).bind('pageinit', function(){
+//     // Code goes here
 
+// });    
 
 
 function onLoad() {
