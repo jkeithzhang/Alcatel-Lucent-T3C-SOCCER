@@ -18,16 +18,36 @@ module.exports = function() {
 		}
 	}
 
-	function getSchedule(callback) {
-		db2.query('SELECT * FROM schedule', function(err, rows, fields) {
-			if (err) throw err;
-			return callback(rows);
-		});		
-	}
-
 	this.parseSchedule = function(res) {
 		getSchedule(function(e) {
 			res.jsonp(e);
 		});
 	}
+
+	this.inUpdate = function(res) {
+		inUpdate(function(e) {
+			res.jsonp(e);
+		});
+	}	
+
+	// function been used
+	function getSchedule(callback) {
+		db2.query('SELECT * FROM schedule', function(err, rows, fields) {
+			if (err) {
+				return callback('getSchedule query error');				
+			} else {
+				return callback(rows);
+			}
+		});		
+	}
+
+	function inUpdate(callback) {
+		db2.query('UPDATE schedule SET weekday=3 WHERE id=1', function(err, rows, fields) {
+			if (err) {
+				return callback('inUpdate query error');
+			} else {
+				return callback(rows);
+			}
+		});		
+	}	
 }

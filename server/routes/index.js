@@ -10,6 +10,9 @@ module.exports = function(app, PM) {
 	  new PM().parseSchedule(res);
 	});
 
+	app.get('/in-update', function (req, res) {
+	  new PM().inUpdate(res);
+	});
 /*
  * All others
  */

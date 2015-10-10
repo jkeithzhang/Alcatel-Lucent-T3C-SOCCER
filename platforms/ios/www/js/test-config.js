@@ -27,6 +27,23 @@ $(document).on("pageinit", "#page1", function(event){
 
     $('#page1').on('vclick', '.in-button', function(e) {
         e.preventDefault(); //Why is this neccessary?
+        $.ajax({
+            url: server.host_port+'/in-update',//config
+            type: 'GET',
+            dataType: 'jsonp',
+            contentType: 'application/json',
+            error: function(xhr){
+                console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+            },
+            success: function(response) {
+                if(typeof(response)=='string') {
+                    alert(JSON.stringify(response));                    
+                } else {
+                    alert('success!');
+                }
+                // $('#records_table').append(trHTML);
+            }
+        });
         $(this).parent().html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');
         socket.emit('chat message', 'James joining');             
     });

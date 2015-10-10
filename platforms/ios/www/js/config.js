@@ -2,7 +2,7 @@
 // Right now env is only for localhost (DEV only)
 // 
 var server = {
-	host_port: 'http://192.168.1.101:2000'
+	host_port: 'http://192.168.1.108:2000'
 	// user: 'root',
 	// password: 'tigris',
 	// database: 'tshelp',
