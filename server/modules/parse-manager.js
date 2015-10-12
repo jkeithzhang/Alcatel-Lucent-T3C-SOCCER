@@ -32,11 +32,17 @@ module.exports = function() {
 
 	// function been used
 	function getSchedule(callback) {
+		var result = new Array();
 		db2.query('SELECT * FROM schedule', function(err, rows, fields) {
 			if (err) {
 				return callback('getSchedule query error');				
 			} else {
-				return callback(rows);
+				db2.query('SELECT * FROM attendance_record', function(err2, rows2, fi) {
+					result.push(rows);
+					result.push(rows2);
+					console.log(JSON.stringify(result));
+					return callback(result);
+				});
 			}
 		});		
 	}

@@ -10,12 +10,18 @@ $(document).on("pageinit", "#page1", function(event){
         },
         success: function(response) {
             var trHTML = '';
-            $.each(response, function (i, item) {
+            var divHTML = '';
+            //for schedule
+            $.each(response[0], function (i, item) {
                 trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
                 item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
             });
             $(trHTML).appendTo('#records_table').trigger('create');
-            // $('#records_table').append(trHTML);
+            //for attending
+            $.each(response[1], function (i, item) {
+                divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">James Tan</div>';
+            });
+            $(divHTML).appendTo('#white-team').trigger('create');
         }
     });
 
