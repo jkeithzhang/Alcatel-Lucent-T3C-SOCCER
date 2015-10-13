@@ -19,7 +19,7 @@ $(document).on("pageinit", "#page1", function(event){
             $(trHTML).appendTo('#records_table').trigger('create');
             //for attending
             $.each(response[1], function (i, item) {
-                divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">James Tan</div>';
+                divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.player + '</div>';
             });
             $(divHTML).appendTo('#white-team').trigger('create');
         }
@@ -63,6 +63,9 @@ $(document).on("pageinit", "#page1", function(event){
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
+    alert('triggered once!');
+
+    
 }
 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 //
