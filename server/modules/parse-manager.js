@@ -48,7 +48,7 @@ module.exports = function() {
 	}
 
 	function inUpdate(callback) {
-		db2.query('UPDATE schedule SET weekday=3 WHERE id=1', function(err, rows, fields) {
+		db2.query("INSERT INTO attendance_record (date, white_team_flag, player) VALUES ('2015-10-12', 1, 'David')", function(err, rows, fields) {
 			if (err) {
 				return callback('inUpdate query error');
 			} else {
