@@ -3,10 +3,11 @@ var app = express();
 var http = require('http');
 var server = http.Server(app);
 var body = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 app.set('view engine', 'html');
 app.use(body.json());
-
+app.use(cookieParser());
 
 //Task Manager (talk to db)
 var PM = require('./modules/parse-manager');

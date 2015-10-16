@@ -24,25 +24,41 @@
         <link rel="stylesheet" type="text/css" href="css/main-page.css">
         <!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">  -->
         <script type="text/javascript" src="cordova.js"></script>    
-        <script src="http://192.168.1.111:2000/socket.io/socket.io.js"></script>
+        <script src="http://192.168.1.102:2000/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/config.js"></script>        
         <script>
             var socket = io.connect(server.host_port);
         </script>
         <script type="text/javascript" src="vendor/js/jquery.js"></script>
-        <script type="text/javascript" src="js/test-config.js"></script>       if   
+        <script type="text/javascript" src="js/test-config.js"></script>  
         <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>        
         <title>T3C Soccer</title>
     </head>
     
     <body onload="onLoad()">
         <div data-role="page" id="page1" data-url="page1">
+            <section class="container">
+              <div class="login">
+                <div class="ui-grid-a ui-content">
+                    <div class="ui-block-a" style="text-align:center;"><img src="T3C-SOCCER.jpg" width="50" height="50"/></div>
+                    <div class="ui-block-b"><p style="vertical-align: middle;">TEC SOCCER</p></div>
+                </div>
+                <form method="post" action="index.html">
+                  <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+                  <p><input type="password" name="password" value="" placeholder="Password"></p>
+                  <p class="submit"><input type="submit" name="commit" value="Login"></p>
+                  <p class="submit"><input type="submit" name="commit" value="Register"></p>
+                </form>
+              </div>
+            </section>
+        </div>
+        <div data-role="page" id="page2" data-url="page2">
             <div data-role="panel" data-theme="g" id="panel-first">
                 <ul data-role="listview" data-theme="g" data-divider-theme="g">
                         <li data-role="list-divider">Menu</li>
-                        <li><a class="test" href="#page1" data-transition="flow">Next Game</a></li>
-                        <li><a class="test" href="#page2" data-transition="flow">Availability</a></li>          
+                        <li><a class="test" href="#page2" data-transition="flow">Next Game</a></li>
+                        <li><a class="test" href="#page3" data-transition="flow">Availability</a></li>          
                         <li data-role="list-divider">More Info</li>
                         <li><a class="test" href="#">Me</a></li>
                         <li><a class="test" href="#">Notification</a></li>
@@ -97,12 +113,12 @@
                 </div>
             </div>
         </div>
-        <div data-role="page" id="page2" data-url="page2">
+        <div data-role="page" id="page3" data-url="page3">
             <div data-role="panel" data-theme="g" id="panel-second">
                 <ul data-role="listview" data-theme="g" data-divider-theme="g">
                         <li data-role="list-divider">Menu</li>
-                        <li><a class="test" href="#page1" data-transition="flow">Next Game</a></li>
-                        <li><a class="test" href="#page2" data-transition="flow">Availability</a></li>          
+                        <li><a class="test" href="#page2" data-transition="flow">Next Game</a></li>
+                        <li><a class="test" href="#page3" data-transition="flow">Availability</a></li>          
                         <li data-role="list-divider">More Info</li>
                         <li><a class="test" href="#">Calendar</a></li>
                         <li><a class="test" href="#">Notification</a></li>

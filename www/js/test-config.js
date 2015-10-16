@@ -63,7 +63,7 @@ $(document).on("pageinit", "#page1", function(event){
 
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
-    alert('triggered once!');
+    // alert('triggered once!');
 
     
 }
