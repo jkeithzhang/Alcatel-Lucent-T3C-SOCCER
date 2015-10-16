@@ -37,20 +37,21 @@
     </head>
     
     <body onload="onLoad()">
-        <div data-role="page" id="page1" data-url="page1">
+        <div data-role="page" id="page1" data-url="page1" style="background-color:gray;">
             <section class="container">
-              <div class="login">
-                <div class="ui-grid-a ui-content">
-                    <div class="ui-block-a" style="text-align:center;"><img src="T3C-SOCCER.jpg" width="50" height="50"/></div>
-                    <div class="ui-block-b"><p style="vertical-align: middle;">TEC SOCCER</p></div>
+                <div class="login">
+                    <div class="ui-grid-solo">
+                        <div style="text-align:center;"><img src="img/tec-soccer.png" width="300" height="90"/></div>
+                    </div>
+                    <form method="post" action="index.html">
+                        <div style="margin-bottom:20px;">
+                            <input type="text" name="login" value="" placeholder="Username or Email">
+                            <input type="password" name="password" value="" placeholder="Password">
+                        </div>
+                        <div class="submit"><input type="submit" name="commit" value="Login"></div>
+                        <div class="submit"><input type="submit" name="commit" value="Register"></div>
+                    </form>
                 </div>
-                <form method="post" action="index.html">
-                  <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-                  <p><input type="password" name="password" value="" placeholder="Password"></p>
-                  <p class="submit"><input type="submit" name="commit" value="Login"></p>
-                  <p class="submit"><input type="submit" name="commit" value="Register"></p>
-                </form>
-              </div>
             </section>
         </div>
         <div data-role="page" id="page2" data-url="page2">
