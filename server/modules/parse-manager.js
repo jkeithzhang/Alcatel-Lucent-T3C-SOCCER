@@ -20,6 +20,7 @@ module.exports = function() {
 
 	this.parseSchedule = function(res) {
 		getSchedule(function(e) {
+			res.cookie('cookieName','randomNumber', { maxAge: 900000, httpOnly: false });
 			res.jsonp(e);
 		});
 	}

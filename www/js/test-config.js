@@ -1,5 +1,30 @@
-$(document).on("pageinit", "#page1", function(event){
+$(document).on("pageinit", document, function(event){
     event.preventDefault();
+    // $.ajax({
+    //     url: server.host_port+'/',//config
+    //     type: 'GET',
+    //     dataType: 'jsonp',
+    //     contentType: 'application/json',
+    //     error: function(xhr){
+    //         console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+    //     },
+    //     success: function(response) {
+    //         var trHTML = '';
+    //         var divHTML = '';
+    //         //for schedule
+    //         $.each(response[0], function (i, item) {
+    //             trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
+    //             item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
+    //         });
+    //         $(trHTML).appendTo('#records_table').trigger('create');
+    //         //for attending
+    //         $.each(response[1], function (i, item) {
+    //             divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.player + '</div>';
+    //         });
+    //         $(divHTML).appendTo('#white-team').trigger('create');
+    //     }
+    // });
+
     $.ajax({
         url: server.host_port+'/',//config
         type: 'GET',
@@ -9,19 +34,7 @@ $(document).on("pageinit", "#page1", function(event){
             console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
         },
         success: function(response) {
-            var trHTML = '';
-            var divHTML = '';
-            //for schedule
-            $.each(response[0], function (i, item) {
-                trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
-                item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
-            });
-            $(trHTML).appendTo('#records_table').trigger('create');
-            //for attending
-            $.each(response[1], function (i, item) {
-                divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.player + '</div>';
-            });
-            $(divHTML).appendTo('#white-team').trigger('create');
+            console.log(response);
         }
     });
 
@@ -31,7 +44,7 @@ $(document).on("pageinit", "#page1", function(event){
         $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
     });
 
-    $('#page1').on('vclick', '.in-button', function(e) {
+    $('#page2').on('vclick', '.in-button', function(e) {
         e.preventDefault(); //Why is this neccessary?
         $.ajax({
             url: server.host_port+'/in-update',//config
@@ -54,7 +67,7 @@ $(document).on("pageinit", "#page1", function(event){
         socket.emit('chat message', 'James joining');             
     });
 
-    $('#page1').on('vclick', '.cancel-button', function(e) {
+    $('#page2').on('vclick', '.cancel-button', function(e) {
         e.preventDefault(); //Why is this not neccessary then?
         $(this).parent().html('<div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div>');
         socket.emit('chat message', 'James joining');             
