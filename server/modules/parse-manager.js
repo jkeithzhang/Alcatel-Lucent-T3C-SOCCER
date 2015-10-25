@@ -18,9 +18,21 @@ module.exports = function() {
 		}
 	}
 
-	this.page1init = function(res) {
+	this.page1init = function(req, res) {
+
+
 		getSchedule(function(e) {
-			res.cookie('cookieName','kezhang', { maxAge: 100000, httpOnly: false });
+		    var cookie = req.cookies.cookieName;
+		    if (cookie === undefined)
+		    {
+		      console.log('cookie does not exist', cookie);
+			  res.cookie('cookieName','kezhang', { maxAge: 100000, httpOnly: false });
+		    } 
+		    else
+		    {
+		      // yes, cookie was already present
+		      console.log('cookie exists', req.cookies.cookieName);
+		    } 
 			res.jsonp(e);
 		});
 	}

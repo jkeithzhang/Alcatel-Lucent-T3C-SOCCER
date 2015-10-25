@@ -11,25 +11,25 @@ app.use(cookieParser());
 
 
 
-// set a cookie
-app.use(function (req, res, next) {
-  // check if client sent cookie
-  var cookie = req.cookies.cookieName;
-  if (cookie === undefined)
-  {
-    console.log('cookie does not exist', cookie);
-    // res.setHeader('Set-Cookie','test=value');
-    // res.cookie('cookieName','randomNumber', { maxAge: 900000, httpOnly: false });
-    // console.log('cookie created successfully');
-    // res.send('hello world');
-  } 
-  else
-  {
-    // yes, cookie was already present
-    console.log('cookie exists', req.cookies.cookieName);
-  } 
-  next(); // <-- important!
-});
+// // set a cookie
+// app.use(function (req, res, next) {
+//   // check if client sent cookie
+//   var cookie = req.cookies.cookieName;
+//   if (cookie === undefined)
+//   {
+//     console.log('cookie does not exist', cookie);
+//     // res.setHeader('Set-Cookie','test=value');
+//     // res.cookie('cookieName','randomNumber', { maxAge: 900000, httpOnly: false });
+//     // console.log('cookie created successfully');
+//     // res.send('hello world');
+//   } 
+//   else
+//   {
+//     // yes, cookie was already present
+//     console.log('cookie exists', req.cookies.cookieName);
+//   } 
+//   next(); // <-- important!
+// });
 
 
 //Task Manager (talk to db)
