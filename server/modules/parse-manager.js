@@ -18,9 +18,9 @@ module.exports = function() {
 		}
 	}
 
-	this.parseSchedule = function(res) {
+	this.page1init = function(res) {
 		getSchedule(function(e) {
-			res.cookie('cookieName','randomNumber', { maxAge: 900000, httpOnly: false });
+			res.cookie('cookieName','kezhang', { maxAge: 100000, httpOnly: false });
 			res.jsonp(e);
 		});
 	}

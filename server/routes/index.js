@@ -8,7 +8,7 @@ module.exports = function(app, PM) {
 	  // res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');  
 	  // res.header('Access-Control-Allow-Headers', 'Content-Type');
 	  // console.log('Cookies: '+JSON.stringify(req.cookies));
-	  new PM().parseSchedule(res);
+	  new PM().page1init(res);
 	});
 
 	app.get('/in-update', function (req, res) {
