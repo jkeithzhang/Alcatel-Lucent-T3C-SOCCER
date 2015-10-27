@@ -27,13 +27,14 @@ module.exports = function() {
 		    {
 		      console.log('cookie does not exist', cookie);
 			  res.cookie('cookieName','kezhang', { maxAge: 100000, httpOnly: false });
+			  res.send('undefined');
 		    } 
 		    else
 		    {
 		      // yes, cookie was already present
 		      console.log('cookie exists', req.cookies.cookieName);
+		      res.jsonp(e);
 		    } 
-			res.jsonp(e);
 		});
 	}
 

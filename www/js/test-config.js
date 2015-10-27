@@ -25,19 +25,6 @@ $(document).on("pageinit", document, function(event){
         }
     });
 
-    $.ajax({
-        url: server.host_port+'/',//config
-        type: 'GET',
-        dataType: 'jsonp',
-        contentType: 'application/json',
-        error: function(xhr){
-            console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
-        },
-        success: function(response) {
-            console.log(response);
-        }
-    });
-
     socket.on('chat message', function(msg){
         var insertHTML = '';
         insertHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">James</div>';
