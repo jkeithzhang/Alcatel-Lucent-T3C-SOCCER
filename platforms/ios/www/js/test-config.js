@@ -9,19 +9,24 @@ $(document).on("pageinit", document, function(event){
             console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
         },
         success: function(response) {
-            var trHTML = '';
-            var divHTML = '';
-            //for schedule
-            $.each(response[0], function (i, item) {
-                trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
-                item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
-            });
-            $(trHTML).appendTo('#records_table').trigger('create');
-            //for attending
-            $.each(response[1], function (i, item) {
-                divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.player + '</div>';
-            });
-            $(divHTML).appendTo('#white-team').trigger('create');
+            if(response == 'undefined') {
+                window.location.href = 'http://localhost:8888/soccer/#page1';
+            } else {
+                window.location.href = 'http://localhost:8888/soccer/#page2';
+                var trHTML = '';
+                var divHTML = '';
+                //for schedule
+                $.each(response[0], function (i, item) {
+                    trHTML += '<tr><td style="text-align:center;vertical-align:middle">' + 
+                    item.date + '</td><td style="text-align:center;vertical-align:middle"><div class="in-button"><i class="fa fa-user-plus" style="color:#38c;"></i><a>  I\'m in</a></div></td></tr>';
+                });
+                $(trHTML).appendTo('#records_table').trigger('create');
+                //for attending
+                $.each(response[1], function (i, item) {
+                    divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.player + '</div>';
+                });
+                $(divHTML).appendTo('#white-team').trigger('create');
+            }
         }
     });
 
