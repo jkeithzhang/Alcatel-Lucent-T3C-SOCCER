@@ -77,7 +77,6 @@ $(document).on("pageinit", document, function(event){
                 } else {
                     alert('success!');
                 }
-                // $('#records_table').append(trHTML);
             }
         });
         $(this).parent().html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');

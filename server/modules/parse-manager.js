@@ -22,16 +22,16 @@ module.exports = function() {
 
 
 		getSchedule(function(e) {
-		    var cookie = req.cookies.cookieName;
+		    var cookie = req.cookies.login;
 		    if (cookie === undefined)
 		    {
-		      console.log('cookie does not exist', cookie);
+		      console.log('cookie does not exist', req.cookies);
 			  res.jsonp('undefined');
 		    } 
 		    else
 		    {
 		      // yes, cookie already present
-		      console.log('cookie exists', req.cookies.cookieName);
+		      console.log('cookie exists', req.cookies);
 		      res.jsonp(e);
 		    } 
 		});
@@ -49,7 +49,8 @@ module.exports = function() {
 		auth(name, pwd, function(e) {
 			//if there is result, add cookie
 			if(e.length != 0) {
-				res.cookie('cookieName',name, { maxAge: 10000, httpOnly: false });
+				res.cookie('login',name, { maxAge: 10000, httpOnly: true });
+				res.cookie('fullname',e[0].first_name+' '+e[0].last_name, { maxAge: 10000, httpOnly: true });
 				res.jsonp(e);
 			} else {
 				res.jsonp('user not found');
