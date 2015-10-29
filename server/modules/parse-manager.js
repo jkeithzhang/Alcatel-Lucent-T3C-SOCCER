@@ -26,7 +26,6 @@ module.exports = function() {
 		    if (cookie === undefined)
 		    {
 		      console.log('cookie does not exist', cookie);
-			  // res.cookie('cookieName','kezhang', { maxAge: 10000, httpOnly: false });
 			  res.jsonp('undefined');
 		    } 
 		    else

@@ -53,7 +53,7 @@ $(document).on("pageinit", document, function(event){
                 if(response != "user not found") {
                     window.location.href = 'http://localhost:8888/soccer/#page2';
                 } else {
-                    window.location.href = 'http://localhost:8888/soccer/#page1';
+                    flash.show();
                 }
                 // console.log('success');
             }
@@ -90,6 +90,41 @@ $(document).on("pageinit", document, function(event){
         socket.emit('chat message', 'James joining');             
     });
     //********** page 2 actions end **********
+
+
+    var flash = {
+        exists: function() {
+            return ($('#flash').length > 0);
+        },
+        show: function(msg) {
+            var message;
+            // Hide message when it's clicked on
+            $('body').delegate('#flash', 'click', function() {
+                flash.hide();
+            });
+            // Display the flash
+            $('#flash').slideDown();
+            // Clear the timeout if one is set
+            clearTimeout(flash.timeout);
+            // Hide the message after 5 seconds
+            flash.timeout = setTimeout(function() {
+                flash.hide();
+            }, 5000);
+        },
+        hide: function() {
+            // Hide the flash
+            $('#flash').slideUp();
+            // Clear the timeout if it exists
+            if (flash.timeout) {
+                clearTimeout(flash.timeout);
+            }
+        },
+        timeout: null
+    };
+    $('#register_submit').click(function() {
+        flash.show();
+        return false;
+    });
 });
 
 function onLoad() {

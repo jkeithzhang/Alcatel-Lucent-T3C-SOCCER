@@ -68,26 +68,13 @@ li[data-role="list-divider"] {
   border-radius: 3px;
   @include box-shadow(0 0 200px rgba(white, .5), 0 1px 2px rgba(black, .3));
 }
-
-  p.remember_me {
-    float: left;
-    line-height: 31px;
-
-    label {
-      font-size: 12px;
-      color: #777;
-      cursor: pointer;
-    }
-
-    input {
-      position: relative;
-      bottom: 1px;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-  }
-
-
+#flash {
+    background: rgba(245, 245, 245, 0.8);
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
 
 
 
