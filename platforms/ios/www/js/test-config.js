@@ -50,10 +50,13 @@ $(document).on("pageinit", document, function(event){
             },
             success: function(response) {
                 console.log(response);
+                flash.show('Login Success!');
                 if(response != "user not found") {
-                    window.location.href = 'http://localhost:8888/soccer/#page2';
+                    setTimeout(function(){
+                        window.location.href = 'http://localhost:8888/soccer/#page2';
+                    }, 1000);
                 } else {
-                    flash.show();
+                    flash.show('Invalid Username/Password!');
                 }
                 // console.log('success');
             }
@@ -101,6 +104,7 @@ $(document).on("pageinit", document, function(event){
             $('body').delegate('#flash', 'click', function() {
                 flash.hide();
             });
+            $('#flash').html(msg);
             // Display the flash
             $('#flash').slideDown();
             // Clear the timeout if one is set
@@ -121,7 +125,7 @@ $(document).on("pageinit", document, function(event){
         timeout: null
     };
     $('#register_submit').click(function() {
-        flash.show();
+        flash.show('Invalid Username/Password!');
         return false;
     });
 });
