@@ -31,7 +31,7 @@ module.exports = function() {
 		    } 
 		    else
 		    {
-		      // yes, cookie was already present
+		      // yes, cookie already present
 		      console.log('cookie exists', req.cookies.cookieName);
 		      res.jsonp(e);
 		    } 
@@ -41,6 +41,20 @@ module.exports = function() {
 	this.inUpdate = function(res) {
 		inUpdate(function(e) {
 			res.jsonp(e);
+		});
+	}	
+
+	this.auth = function(req, res) {
+		var name = req.query.login_name;
+		var pwd = req.query.login_pwd;
+		auth(name, pwd, function(e) {
+			//if there is result, add cookie
+			if(e.length != 0) {
+				res.cookie('cookieName',name, { maxAge: 10000, httpOnly: false });
+				res.jsonp(e);
+			} else {
+				res.jsonp('user not found');
+			}
 		});
 	}	
 
@@ -59,6 +73,16 @@ module.exports = function() {
 				});
 			}
 		});		
+	}
+
+	function auth(login, pwd, callback) {
+		db2.query("SELECT * FROM players WHERE login_name='" + login + "' AND login_pwd='" + pwd + "'", function(err, rows, fields) {
+			if (err) {
+				return callback('auth query error');
+			} else {
+				return callback(rows);
+			}
+		});	
 	}
 
 	function inUpdate(callback) {

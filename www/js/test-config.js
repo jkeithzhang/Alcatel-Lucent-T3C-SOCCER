@@ -39,26 +39,25 @@ $(document).on("pageinit", document, function(event){
     //********** page 1 actions start **********
     $('#page1').on('vclick', '#login_submit', function(e) {
         e.preventDefault(); //Why is this neccessary?
-        alert('OAuth: ' + $('#login').val() + $('#pwd').val());
-        // $.ajax({
-        //     url: server.host_port+'/in-update',//config
-        //     type: 'GET',
-        //     dataType: 'jsonp',
-        //     contentType: 'application/json',
-        //     error: function(xhr){
-        //         console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
-        //     },
-        //     success: function(response) {
-        //         if(typeof(response)=='string') {
-        //             alert(JSON.stringify(response));                    
-        //         } else {
-        //             alert('success!');
-        //         }
-        //         // $('#records_table').append(trHTML);
-        //     }
-        // });
-        // $(this).parent().html('<div class="cancel-button"><i class="fa fa-user-times" style="color:#059;"></i><a style="color:#059;">  cancel</a></div>');
-        // socket.emit('chat message', 'James joining');             
+        $.ajax({
+            url: server.host_port+'/auth',
+            type: 'GET',//Why cant set POST here?
+            data: {login_name:$('#login').val(), login_pwd:$('#pwd').val()},
+            dataType: 'jsonp',
+            contentType: 'application/json',
+            error: function(xhr){
+                console.log('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+            },
+            success: function(response) {
+                console.log(response);
+                if(response != "user not found") {
+                    window.location.href = 'http://localhost:8888/soccer/#page2';
+                } else {
+                    window.location.href = 'http://localhost:8888/soccer/#page1';
+                }
+                // console.log('success');
+            }
+        });        
     });
     //********** page 1 actions end **********    
     //********** page 2 actions start **********
