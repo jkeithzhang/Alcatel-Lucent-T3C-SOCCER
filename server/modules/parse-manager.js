@@ -1,4 +1,5 @@
-var	db2		 	= require('./mysql').connection;
+var	db2		 	= require('./mysql').connection,
+	_			= require('underscore');
 
 module.exports = function() {
 	function parseBoolean(string) {
@@ -22,14 +23,12 @@ module.exports = function() {
 
 
 		getSchedule(function(e) {
-		    var cookie = req.cookies.login;
-		    if (cookie === undefined)
-		    {
+		    var cookie = req.cookies;
+		    if (_.isEmpty(cookie) == true) {
 		      console.log('cookie does not exist', req.cookies);
 			  res.jsonp('undefined');
 		    } 
-		    else
-		    {
+		    else {
 		      // yes, cookie already present
 		      console.log('cookie exists', req.cookies);
 		      res.jsonp(e);
