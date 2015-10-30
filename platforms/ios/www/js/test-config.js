@@ -24,7 +24,7 @@ $(document).on("pageinit", '#page2', function(event){
                 $(trHTML).appendTo('#records_table').trigger('create');
                 //for attending
                 $.each(response[1], function (i, item) {
-                    divHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + item.first_name + '</div>';
+                    divHTML += '<div id="' + item.first_name + '_' + item.date + '" style="text-align:center;border-style:none;padding-top:10px;">' + item.first_name + '</div>';
                 });
                 $(divHTML).appendTo('#white-team').trigger('create');
             }
@@ -35,12 +35,13 @@ $(document).on("pageinit", '#page2', function(event){
         var info = msg.split(" ");
         if(info[0] == 'in') {
             var insertHTML = '';
-            insertHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + info[1] + '</div>';
+            insertHTML += '<div id="' + info[1] + '_2015-10-12' + '" style="text-align:center;border-style:none;padding-top:10px;">' + info[1] + '</div>';
             $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
         } else { //out in this case
-            var insertHTML = '';
-            insertHTML += '<div style="text-align:center;border-style:none;padding-top:10px;">' + info[1] + '</div>';
-            $(insertHTML).hide().appendTo('#white-team').fadeIn(1000);
+            var deleteHTML = '';
+            deleteHTML += '<div id="' + info[1] + '_2015-10-12' + '" style="text-align:center;border-style:none;padding-top:10px;">' + info[1] + '</div>';
+            // $(deleteHTML).hide().appendTo('#white-team').fadeIn(1000);
+            $('#' + info[1] + '_2015-10-12').remove().fadeIn(1000);
         }
     });
     
