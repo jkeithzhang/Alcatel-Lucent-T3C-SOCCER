@@ -10,10 +10,10 @@ $(document).on("pageinit", '#page2', function(event){
         },
         success: function(response) {
             if(response == 'undefined') {
-                window.location.href = 'http://192.168.1.120:8888/soccer/#page1';
+                window.location.href = 'http://10.0.1.2:8888/soccer/#page1';
             } else {
                 // if()//current URL
-                window.location.href = 'http://192.168.1.120:8888/soccer/#page2';
+                window.location.href = 'http://10.0.1.2:8888/soccer/#page2';
                 var trHTML = '';
                 var divHTML = '';
                 //for schedule
@@ -100,7 +100,7 @@ $(document).on("pageinit", '#page1', function(event){
                 flash.show('Login Success!');
                 if(response != "user not found") {
                     setTimeout(function(){
-                        window.location.href = 'http://192.168.1.120:8888/soccer/#page2';
+                        window.location.href = 'http://10.0.1.2:8888/soccer/#page2';
                     }, 1000);
                 } else {
                     flash.show('Invalid Username/Password!');
