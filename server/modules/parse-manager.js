@@ -36,11 +36,17 @@ module.exports = function() {
 		});
 	}
 
-	this.inUpdate = function(res) {
-		inUpdate(function(e) {
+	this.inUpdate = function(req, res) {
+		inUpdate(req.cookies.login, req.cookies.firstname, function(e) {
 			res.jsonp(e);
 		});
 	}	
+
+	this.cancelUpdate = function(req, res) {
+		cancelUpdate(req.cookies.login, req.cookies.firstname, function(e) {
+			res.jsonp(e);
+		});
+	}
 
 	this.auth = function(req, res) {
 		var name = req.query.login_name;
@@ -48,8 +54,9 @@ module.exports = function() {
 		auth(name, pwd, function(e) {
 			//if there is result, add cookie
 			if(e.length != 0) {
-				res.cookie('login',name, { maxAge: 10000, httpOnly: true });
-				res.cookie('fullname',e[0].first_name+' '+e[0].last_name, { maxAge: 10000, httpOnly: true });
+				res.cookie('login',name, { maxAge: 100000, httpOnly: true });
+				res.cookie('firstname',e[0].first_name, { maxAge: 100000, httpOnly: true });
+				res.cookie('lastname',e[0].last_name, { maxAge: 100000, httpOnly: true });
 				res.jsonp(e);
 			} else {
 				res.jsonp('user not found');
@@ -84,12 +91,22 @@ module.exports = function() {
 		});	
 	}
 
-	function inUpdate(callback) {
-		db2.query("INSERT INTO attendance_record (date, white_team_flag, player) VALUES ('2015-10-12', 1, 'David')", function(err, rows, fields) {
+	function inUpdate(login, firstname, callback) {
+		db2.query("INSERT INTO attendance_record (date, white_team_flag, player, first_name) VALUES ('2015-10-12', 0, '" + login + "', '" + firstname + "')", function(err, rows, fields) {
 			if (err) {
 				return callback('inUpdate query error');
 			} else {
-				return callback(rows);
+				return callback(firstname);
+			}
+		});		
+	}	
+
+	function cancelUpdate(login, firstname, callback) {
+		db2.query("DELETE FROM attendance_record WHERE date='2015-10-12' AND player='" + login + "'", function(err, rows, fields) {
+			if (err) {
+				return callback('cancelUpdate query error');
+			} else {
+				return callback(firstname);
 			}
 		});		
 	}	

@@ -12,7 +12,11 @@ module.exports = function(app, PM) {
 	});
 
 	app.get('/in-update', function (req, res) {
-		new PM().inUpdate(res);
+		new PM().inUpdate(req, res);
+	});
+
+	app.get('/cancel-update', function (req, res) {
+		new PM().cancelUpdate(req, res);
 	});
 
 	app.get('/auth', function (req, res) {
