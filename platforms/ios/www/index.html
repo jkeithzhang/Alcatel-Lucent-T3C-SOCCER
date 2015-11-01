@@ -11,6 +11,7 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
         <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+        <meta http-equiv="Content-Security-Policy" content="child-src 'none'; data: gap: https://ssl.gstatic.com; object-src 'none'">  
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -18,7 +19,6 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="vendor/jquery-mobile/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.4.0/css/font-awesome.min.css">
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src https://cdn.example.net; child-src 'none'; object-src 'none'">  -->
 
 
         <link rel="stylesheet" type="text/css" href="css/main-page.css">
