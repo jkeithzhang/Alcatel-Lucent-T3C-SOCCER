@@ -10,7 +10,7 @@ Application to manage soccer group in Alcatel-Lucent T3C.
 * Cordova statusbar ( https://github.com/apache/cordova-plugin-statusbar/ )
 * Font Awesome v4.4.0 ( https://fortawesome.github.io/Font-Awesome/ )
 * Underscore.JS v1.8.3 ( https://github.com/jashkenas/underscore )
-* Socket.io v1.0 (https://github.com/socketio/socket.io/)
+* Socket.io v1.0 ( https://github.com/socketio/socket.io/ )
 
 ## Contributors
 - Ke Zhang [ke.zhang@alcatel-lucent.com]
